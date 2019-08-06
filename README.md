@@ -1,4 +1,4 @@
-My C++ implementation of a CHIP-8 emulator.
+My C++ implementation of a CHIP-8 emulator. UNTESTED
 
 References:
 
