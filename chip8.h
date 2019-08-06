@@ -19,6 +19,8 @@ class chip8
         unsigned char V[16];
         unsigned char gfx[64 * 32];
         unsigned char key[16];
+        
+        bool drawFlag;
 
         unsigned char delay_timer;
         unsigned char sound_timer;
