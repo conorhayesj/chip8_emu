@@ -292,16 +292,31 @@ void chip8::emulate()
                 break;
 
                 case 0x0055: // 0xFX55 -> Stores V0 to VX in memory starting at address IR.
-/// NEEDS WORK. CONTINUE. 
+// NEEDS WORK. CONTINUE.
+		    int k = V[(opcode & 0x0F00) >> 8];
+		    for(int j = 0; j <= k; j++)
+		    {
+			    memory[ir + j] = V[j];
+		    }
+		    pc += 2;
                 break;
 
-                case 0x0065: // 0xFX65 -> Fills V0 to VX with values from memory starting at address IR.
+                case 0x0065: // 0xFX65 -> Fills V0 to VX with values from memory starting at address IR.    
+		    int l = V[(opcode & 0x0F00) >> 8];
+		    for(int j = 0; j <= l; j++)
+		    {
+			    V[j] = memory[ir + j];
+		    }
+		    pc += 2;
                 break;
 
                 default:
                     std::cout << "Unknown opcode : " << opcode << std::endl;
             }
-        break;        
+        break;   
+
+	default:
+		std::cout << "Unknown opcode : " << opcode << std::endl;
 
     }
     // Execute opcode
