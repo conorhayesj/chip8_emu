@@ -292,7 +292,6 @@ void chip8::emulate()
                 break;
 
                 case 0x0055: // 0xFX55 -> Stores V0 to VX in memory starting at address IR.
-// NEEDS WORK. CONTINUE.
 		    int k = V[(opcode & 0x0F00) >> 8];
 		    for(int j = 0; j <= k; j++)
 		    {
